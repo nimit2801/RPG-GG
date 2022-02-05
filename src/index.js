@@ -18,16 +18,13 @@ async function restLoveQuote(){
 
 async function restLoveGifs(){
     let random = Math.floor(Math.random() * 51);
-    console.log(random)
     let quote = await (await fetch(`https://g.tenor.com/v1/search?q=romantic&key=LIVDSRZULELA&limit=1&pos=${random}`))
     let json_ = await quote.json()
-    console.log(json_)
-    return json_.results[0];
+    return json_.results[0].url;
 }
 client.on('messageCreate', async(message)=> {
     if(!message.author.bot){
         if(message.content.startsWith('.new')){
-            console.log("inside .new")
             if(message.content == '.new topic')
                 await message.reply(await fun.topic())
             else if(message.content = '.new')
