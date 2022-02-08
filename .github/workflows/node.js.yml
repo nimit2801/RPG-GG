@@ -5,7 +5,7 @@ name: Discord-bot-deploy
 
 on:
   push:
-    branches: [workflow]
+    branches: [main]
 
 jobs:
   deploy:

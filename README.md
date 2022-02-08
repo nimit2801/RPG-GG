@@ -4,6 +4,7 @@
 
 - Its a discord bot with cute commands in coming
 - cute-splatter makes you laugh, cry and cringe
+- CI/CD setup on Azure VPS
 
 ## Commands
 
