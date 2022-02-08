@@ -51,6 +51,6 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
-          script: cd RPG-DEPLY/ && npm i
+          run: cd RPG-DEPLY/ && npm i
     # - run: npm run build --if-present
     # - run: npm test
