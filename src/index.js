@@ -10,12 +10,6 @@ client.once('ready', async()=> {
 
 import fun from 'fun-responses'
 
-async function restLoveQuote(){
-    let quote = await (await fetch('https://api.quotable.io/random?tags=love'))
-    let json_ = await quote.json()
-    return json_.content;
-}
-
 async function restLoveGifs(){
     let random = Math.floor(Math.random() * 51);
     let quote = await (await fetch(`https://g.tenor.com/v1/search?q=romantic&key=LIVDSRZULELA&limit=1&pos=${random}`))
@@ -23,18 +17,17 @@ async function restLoveGifs(){
     return json_.results[0].url;
 }
 client.on('messageCreate', async(message)=> {
-    console.log(message.content)
     if(!message.author.bot){
         if(message.content.startsWith('.new')){
             if(message.content == '.new')
                 await message.reply(await fun.pickup())
-            else if(message.content == '.new topic')
+            else if(message.content.startsWith('.new topic'))
                 await message.reply(await fun.topic())
-            else if(message.content == '.new roast')
+            else if(message.content.startsWith('.new roast'))
                 await message.reply(await fun.roast())
-            else if(message.content == '.new toast')
+            else if(message.content.startsWith('.new toast'))
                 await message.reply(await fun.toast())
-            else if(message.content == '.new joke')
+            else if(message.content.startsWith('.new joke'))
                 await message.reply(await fun.joke())
         }
         if(message.content.startsWith('.gif')){
