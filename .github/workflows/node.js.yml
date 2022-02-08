@@ -26,7 +26,7 @@ jobs:
       - run: npm i
       - run: echo "${{secrets.SSHKEY}}" > id_rsa
       - run: cat id_rsa
-      - run: ssh -i /id_rsa ${{secrets.USER}}@${{secrets.host}}
+      - run: ssh -i id_rsa ${{secrets.USER}}@${{secrets.host}}
       - run: ls
   # deploy:
   #   runs-on: ubuntu-latest
