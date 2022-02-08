@@ -29,6 +29,12 @@ client.on('messageCreate', async(message)=> {
                 await message.reply(await fun.topic())
             else if(message.content = '.new')
                 await message.reply(await fun.pickup())
+            else if(message.content = '.new roast')
+                await message.reply(await fun.roast())
+            else if(message.content = '.new toast')
+                await message.reply(await fun.toast())
+            else if(message.content = '.new joke')
+                await message.reply(await fun.joke())
         }
         if(message.content.startsWith('.gif')){
             message.reply(await restLoveGifs(), "wait for a few")
