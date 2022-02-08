@@ -24,6 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm i
+      - run: ssh ${{secrets.SSHKEY}} ${{secrets.USER}}@${{secrets.host}}
       - run: ls
   # deploy:
   #   runs-on: ubuntu-latest
