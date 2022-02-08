@@ -33,9 +33,10 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
           script: |
+            cd RPG-DEPLY/
             export NVM_DIR=~/.nvm
             source ~/.nvm/nvm.sh
-            export DJS_TOKEN={{secrets.DJS_TOKEN}}
+            export DJS_TOKEN=${{secrets.DJS_TOKEN}}
             npm install
             pm2 kill && pm2 start src/index.js
     # - run: npm run build --if-present
