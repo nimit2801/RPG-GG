@@ -32,6 +32,9 @@ jobs:
           USERNAME: ${{ secrets.USERNAME }}
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSHKEY }}
-          - run: cd RPG-DEPLY/ && pm2 start src/index.js
+          script: |
+            npm install
+            export DJS_TOKEN={{secrets.DJS_TOKEN}}
+            pm2 kill && pm2 start src/index.js
     # - run: npm run build --if-present
     # - run: npm test
