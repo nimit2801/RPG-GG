@@ -23,17 +23,18 @@ async function restLoveGifs(){
     return json_.results[0].url;
 }
 client.on('messageCreate', async(message)=> {
+    console.log(message.content)
     if(!message.author.bot){
         if(message.content.startsWith('.new')){
-            if(message.content == '.new topic')
-                await message.reply(await fun.topic())
-            else if(message.content = '.new')
+            if(message.content == '.new')
                 await message.reply(await fun.pickup())
-            else if(message.content = '.new roast')
+            else if(message.content == '.new topic')
+                await message.reply(await fun.topic())
+            else if(message.content == '.new roast')
                 await message.reply(await fun.roast())
-            else if(message.content = '.new toast')
+            else if(message.content == '.new toast')
                 await message.reply(await fun.toast())
-            else if(message.content = '.new joke')
+            else if(message.content == '.new joke')
                 await message.reply(await fun.joke())
         }
         if(message.content.startsWith('.gif')){
