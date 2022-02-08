@@ -24,7 +24,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: npm i
-      - run: cat id_rsa >> ${{secrets.SSHKEY}}
+      - run: echo ${{secret.SSHKEY}} > id_rsa
       - run: cat id_rsa
       # - run: ssh -i ${{secrets.SSHKEY}} ${{secrets.USER}}@${{secrets.host}}
       - run: ls
