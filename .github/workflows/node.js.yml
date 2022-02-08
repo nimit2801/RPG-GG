@@ -43,7 +43,7 @@ jobs:
           KEY: ${{ secrets.SSHKEY }}
         with:
           source: '.'
-          target: '/RPG-DEPLY'
+          target: './RPG-DEPLY'
 
       - name: Executing remote command
         uses: appleboy/ssh-action@master
